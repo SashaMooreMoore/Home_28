@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список статей</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.686);">
+    <div style="width: 500px; background-color: rgba(100, 148, 237, 0.506);
+                margin: auto; padding: 50px; border-radius: 8px;">
+
+        {% for i in articles_list %}
+            <p>Статья: </p> 
+            {% for key, value in i.items %}  
+                {% if key != "is_draft" and key != "is_deleted" %}
+                    <p>{{key}} -- {{value}}</p>
+                {% endif %}
+            {% endfor %}
+            <hr>
+        {% endfor %}
+
+    </div>
+</body>
+</html>
